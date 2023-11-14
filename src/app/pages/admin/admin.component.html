@@ -1,0 +1,170 @@
+
+
+
+<div  *ngIf="auth.user$ | async as user; else noUser" >  
+    <div class="flex flex-row">
+      <div class="basis-1/4"></div>
+      <div class="basis-1/2">
+          
+
+
+<div class="relative overflow-x-auto" style="margin-top: 1%;">
+    <button style="margin-top:4%;"  type="button" (click)="auth.signOut()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign Out</button>
+
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 ">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Name
+                </th>  
+                
+                
+                <th scope="col" class="px-6 py-3">
+                    Email
+                </th>
+                 
+                
+                <th scope="col" class="px-6 py-3">
+                    Ethnicity
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Country
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Address
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Postal Code
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Town
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Contact Person
+                </th>
+                
+                <th scope="col" class="px-6 py-3">
+                    Tel
+                </th>
+                
+               
+                <th scope="col" class="px-6 py-3">
+                    Disability Details
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Disability Reg
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr  *ngFor="let member of data" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {{ member.title }} 
+                    <br>
+                    {{ member.first_name }} - {{ member.surname }} -                     {{ member.other_name }}
+                    <br>
+                    {{ member.id }} -                     {{ member.datepicker }}
+<br>
+{{ member.gender }}
+
+
+
+                </th>
+                
+           
+           <td class="px-6 py-4">
+            {{ member.email }}
+
+       </td>
+        
+   
+   
+
+<td class="px-6 py-4">
+    {{ member.ethnicity }}
+
+</td>
+
+<td class="px-6 py-4">
+    {{ member.county }}
+
+</td>
+
+<td class="px-6 py-4">
+    {{ member.address }}
+
+</td>
+
+<td class="px-6 py-4">
+    {{ member.postal_code }}
+
+</td>
+
+<td class="px-6 py-4">
+    {{ member.town }}
+
+</td>
+ 
+
+
+<td class="px-6 py-4">
+    {{ member.altcont }}
+    
+</td> 
+<td class="px-6 py-4">
+    {{ member.altphone }}
+    
+</td>
+<td class="px-6 py-4">
+    {{ member.disabilityDetials }}
+    
+</td>
+<td class="px-6 py-4">
+    {{ member.disabilityReg }}
+    
+</td>
+ 
+            </tr> 
+        </tbody>
+    </table>
+</div>
+
+      </div>
+      <div class="basis-1/4"></div>
+  </div>
+  </div>
+  
+  <ng-template #noUser>
+   
+  
+  <!-- User NOT logged in -->
+  <div style="padding: 10%;">
+  
+    
+    <div  >
+      <h1 class="title" style="font-size: 30px;">County Empolyee Data Management System</h1>
+      <h1 class="title" style="font-size: 20px; color: rgb(55, 55, 172)!important;">Welcome back</h1>
+      <p style="margin-top: 1%;"><small style="letter-spacing: 1px;">Use your approved gmail account to login as an administrator. Contact admin at <a href="tel:254712345678">+254-(7123)-456-789</a> incase of any query.</small></p>
+      <!-- <a style="cursor: pointer;padding-top: 3%!important;" (click)="auth.googleSignin()"  class="btn btn-signin btn-block shadow-0"> <span class="subtitle" >  Log in with Google</span>   </a> -->
+      <button style="margin-top:4%;"  type="button" (click)="auth.googleSignin()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Log in with Google</button>
+  
+    </div>
+  
+    <img style="margin-top: 10%;border-radius: 8px;" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+  
+   
+  </div> 
+  </ng-template>
+  
+  
+  
+  
+  
+    

@@ -1,0 +1,208 @@
+
+
+
+<div  *ngIf="auth.user$ | async as user; else noUser" >  
+  <div class="flex flex-row">
+    <div class="basis-1/4"></div>
+    <div class="basis-1/2">
+        
+    <form  [formGroup]="form" (ngSubmit)="submit()"  style="margin-top: 10%;">
+        <div class="space-y-12">
+          <button style="margin-top:4%;"  type="button" (click)="auth.signOut()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign Out</button>
+
+      
+          <div class="border-b border-gray-900/10 pb-12">
+            <h2 class="text-base font-semibold leading-7 text-gray-900">County Government Empolyee Data Collection System</h2>
+            <p class="mt-1 text-sm leading-6 text-gray-600">Employee Personal Information</p>
+      
+            <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+              <div class="sm:col-span-2">
+                <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+                <div class="mt-2">
+                  <input type="text" formControlName="first_name" name="first_name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+      
+              <div class="sm:col-span-2">
+                <label for="surname" class="block text-sm font-medium leading-6 text-gray-900">Surname</label>
+                <div class="mt-2">
+                  <input type="text"   id="surname"  formControlName="surname"  autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="other-name" class="block text-sm font-medium leading-6 text-gray-900">Other Name (s)</label>
+                <div class="mt-2">
+                  <input type="text" formControlName="other_name" name="other_name" id="other-name" autocomplete="family-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <div class="max-w-md mx-auto bg-white ">
+                    <label for="datepicker" class="block text-sm font-medium text-gray-600">Date of Birth:</label>
+                    <input formControlName="datepicker" name="datepicker" type="date" id="datepicker" class="mt-1 p-2 border rounded-md w-full">
+                </div>
+                  
+              </div>
+      
+              <div class="sm:col-span-2">
+                <label for="id" class="block text-sm font-medium leading-6 text-gray-900">ID No</label>
+                <div class="mt-2">
+                  <input  formControlName="id" type="text" name="id" id="id"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a option</label>
+                <select  formControlName="gender"  id="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option> 
+                </select>
+              </div>
+      
+              <div class="sm:col-span-4">
+                <label   for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                <div class="mt-2">
+                  <input formControlName="email"  id="email" name="email" type="email" autocomplete="email" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select a option</label>
+                <select formControlName="title" id="title" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Choose a title</option>
+                <option value="prof">Prof</option>
+                <option value="dr">Dr</option>
+                <option value="mr">Mr</option>
+                <option value="mrs">Mrs</option>
+                <option value="miss">Miss</option>
+                <option value="rev">Rev</option>
+                <option value="ms">Ms</option>
+                </select>
+              </div>
+      
+              <div class="sm:col-span-2">
+                <label for="county" class="block text-sm font-medium leading-6 text-gray-900">County</label>
+                <div class="mt-2">
+                  <select  formControlName="county"  id="county" name="county" autocomplete="county-name" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                    <option>Kenya</option>
+                    <option>Uganda</option>
+                    <option>Tanzania</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="ethnicity" class="block text-sm font-medium leading-6 text-gray-900">Ethnicity</label>
+                <div class="mt-2">
+                  <input formControlName="ethnicity"   type="text" name="ethnicity" id="ethnicity"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="county" class="block text-sm font-medium leading-6 text-gray-900">Home County</label>
+                <div class="mt-2">
+                  <input type="text" formControlName="county"  name="county" id="county"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="address" class="block text-sm font-medium leading-6 text-gray-900">Postal Address</label>
+                <div class="mt-2">
+                  <input type="text" formControlName="address" name="address" id="address"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="postal-code" class="block text-sm font-medium leading-6 text-gray-900">ZIP / Postal code</label>
+                <div class="mt-2">
+                  <input type="text" formControlName="postal_code" name="postal_code" id="postal-code" autocomplete="postal-code" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-2">
+                <label for="town" class="block text-sm font-medium leading-6 text-gray-900">Town/City</label>
+                <div class="mt-2">
+                  <input type="text"  formControlName="town" name="town" id="town"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-3"> 
+                <label for="altcont" class="block text-sm font-medium leading-6 text-gray-900">Name of Alternative Contact Person</label>
+                <div class="mt-2">
+                  <input type="text"  formControlName="altcont" name="altcont" id="altcont"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+
+              <div class="sm:col-span-3">
+                <label for="altphone" class="block text-sm font-medium leading-6 text-gray-900">Telephone No.</label>
+                <div class="mt-2">
+                  <input type="text" formControlName="altphone" name="altphone" id="altphone"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+              </div>
+      
+              <div class="col-span-full">
+                <label class="relative inline-flex items-center cursor-pointer">
+                    <input formControlName="disability"  name="disability" id="disability" type="checkbox" value="" class="sr-only peer">
+                    <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                    <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Are you living with disability?</span>
+                </label>
+  
+              </div>
+
+              <div class="col-span-full"> 
+                
+                <p>If yes, give;</p>
+                <br>
+                    <label for="disabilityDetials" class="block text-sm font-medium leading-6 text-gray-900"> (i) Details / Nature of disability</label>
+                    <div class="mt-2">
+                      <input formControlName="disabilityDetials" type="text" name="disabilityDetials" id="altphone"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                    <br>
+                    <label for="disabilityReg" class="block text-sm font-medium leading-6 text-gray-900"> (i) Details of registration with the National Council for People with Disabilities ( Registration No. and Date)</label>
+                    <div class="mt-2">
+                      <input type="text" formControlName="disabilityReg" name="disabilityReg" id="disabilityReg"  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+  
+              </div>
+       
+            </div>
+          </div>
+       
+        </div>
+      
+        <div class="mt-6 flex items-center justify-end gap-x-6">
+          <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+          <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+        </div>
+    </form>
+    </div>
+    <div class="basis-1/4"></div>
+</div>
+</div>
+
+<ng-template #noUser>
+ 
+
+<!-- User NOT logged in -->
+<div style="padding: 10%;">
+
+  
+  <div  >
+    <h1 class="title" style="font-size: 30px;">County Empolyee Data Management System</h1>
+    <h1 class="title" style="font-size: 20px; color: rgb(55, 55, 172)!important;">Welcome back</h1>
+    <p style="margin-top: 1%;"><small style="letter-spacing: 1px;">Use your approved gmail account to login as an administrator. Contact admin at <a href="tel:254712345678">+254-(7123)-456-789</a> incase of any query.</small></p>
+    <!-- <a style="cursor: pointer;padding-top: 3%!important;" (click)="auth.googleSignin()"  class="btn btn-signin btn-block shadow-0"> <span class="subtitle" >  Log in with Google</span>   </a> -->
+    <button style="margin-top:4%;"  type="button" (click)="auth.googleSignin()" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Log in with Google</button>
+
+  </div>
+
+  <img style="margin-top: 10%;border-radius: 8px;" src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" srcset="">
+
+ 
+</div> 
+</ng-template>
+
+
+
+
+
+  

@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+ 
+:root {
+    --primary-color: hsl(263, 44%, 79%);
+    --dark: hsl(263, 44%, 25%);
+    --medium: hsl(263, 44%, 78%);
+    --light: hsl(263, 44%, 98%); 
+    --blue: rgb(52,51,140);  
+    --dark-blue: #292a61; 
+  }
+
+  // Primary colors
+$marineBlue: hsl(213, 96%, 18%);
+$purplishBlue: hsl(243, 100%, 62%);
+$pastelBlue: hsl(228, 100%, 84%);
+$lightBlue: hsl(206, 94%, 87%);
+$strawberryRed: hsl(354, 84%, 57%);
+// Neutral colors
+$coolGray: hsl(231, 11%, 63%);
+$lightGray: hsl(229, 24%, 87%);
+$magnolia: hsl(217, 100%, 97%);
+$alabaster: hsl(231, 100%, 99%);
+$white: hsl(0, 0%, 100%);
+ 
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--light);
+  }
+  ::-webkit-scrollbar {
+    width: 5px;
+    background-color: #f5f5f5;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-image: -webkit-linear-gradient(
+      45deg,
+      var(--medium) 25%,
+      transparent 25%,
+      transparent 50%,
+      var(--medium) 50%,
+      var(--medium) 75%,
+      transparent 75%,
+      transparent
+    );
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    margin: 0px;
+    padding: 0px;
+    text-rendering: optimizeLegibility;
+    font-weight: 400;
+    scroll-behavior: smooth;
+    max-width: 100%; 
+    overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
+    scroll-behavior: smooth;
+    cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iMTAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGc+CiAgICA8ZWxsaXBzZSBzdHJva2U9IiMwMDAiIHJ5PSI0LjE4NzQ5IiByeD0iNC4xODc0OSIgaWQ9InN2Z18xIiBjeT0iNSIgY3g9IjUiIHN0cm9rZS13aWR0aD0iMS41IiBmaWxsPSIjMDAwMDAwIi8+CiAgPC9nPgo8L3N2Zz4K")
+        5 5,
+      auto;
+  }
+ 
+
+.title {
+    font-family: "Libre Baskerville", serif;
+    color: black!important;
+    font-weight: bold;
+    color: black;
+  }   
+  
+  .subtitle {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 16px;
+  }
